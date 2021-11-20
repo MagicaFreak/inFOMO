@@ -1,3 +1,7 @@
+CREATE OR REPLACE INDEX strid ON sales(store_id);
+CREATE OR REPLACE INDEX pid ON sales(product_id);
+CREATE OR REPLACE INDEX dates ON sales(date);
+
 CREATE OR REPLACE TABLE calendar(d DATE PRIMARY KEY);
 
 DELIMITER //

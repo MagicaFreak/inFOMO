@@ -47,7 +47,7 @@ def init_aggregate_tables_pd():
                                +"@"+credentials["domain"]
                                +":"+credentials["port"]
                                +"/"+credentials["dbname"])
-    connection = engine.connect();
+    connection = engine.connect()
     for view in views:
         aggregate_tables.update({view:pd.read_sql("SELECT * FROM "+view+";",connection)})
     return connection

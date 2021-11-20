@@ -23,7 +23,6 @@ async def products():
 async def shops():
     return {"message": "Hello World"}
 
-
 @app.get("/citys")
 async def citys():
     return {"message": "Hello World"}
