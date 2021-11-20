@@ -1,0 +1,6 @@
+Fast-API
+uvicorn
+
+panda
+matplotlib
+sqlalchemy
