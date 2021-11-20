@@ -119,3 +119,13 @@ body {
         height: auto;
     }
 }
+
+/* for gsap */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.money{
+    width: 50px;
+    height: 50px;
+}
