@@ -2,9 +2,209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>inFomo</title>
+
+    <link href="static/basic.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 </head>
 <body>
+<header id="header">inFOMO</header>
+<nav id="filters" class="col-2 col-md-3 col-xl-2">
+    <ul class="nav flex-column">
+        <li>
+            <button class="btn btn-primary filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                </svg>
+                <span>
+                    New
+                </span>
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph" viewBox="0 0 16 16">
+                    <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
+                    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                </svg>
+                <span>Sales</span>
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary filter">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
+                     fill="currentColor">
+                    <path d="M958.4,352.4c0.2-4.9-1.3-9.3-4.8-12.9c-1.1-3.3-2.9-6.5-6-8.6L506.9,18.3c-3-2.1-6.4-3.2-10.1-3.3l-250.4-5c-7.9-0.1-15,4.9-17.5,12.4c-2.5,7.5,0.2,15.7,6.7,20.3L350,123.8l-54.6,39.5c-2,0.6-3.9,1.4-5.7,2.6L49.3,339.3c-4.7,3.4-7.5,8.9-7.4,14.8v0.2l-1.2,0.6v304.6l7.7,14.7l440.7,312.5l0.7-0.4c0.8,0.6,1.5,1.3,2.4,1.8c2.7,1.3,5.4,2,8.3,2c3.6,0,7.3-1.1,10.4-3.3l440.7-312.5c4.9-3.4,7.6-8.9,7.6-14.8V354.9C959.3,353.9,958.6,353.3,958.4,352.4 M304.2,47.1l186.3,3.8L879,326.4l-186.3-3.7L304.2,47.1z M481.5,937.1L76.8,650V389.8l404.7,286.9L481.5,937.1L481.5,937.1z M500.5,644.3L90.8,353.7l196.7-141.8l409.7,290.6L500.5,644.3z M923.2,650L518.6,936.9V676.7l404.6-286.9V650z M424.3,696.2L115.9,477.5v141.1l308.5,218.7V696.2z"/>
+                </svg>
+                <span>Products</span>
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop"
+                     viewBox="0 0 16 16">
+                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                </svg>
+                <span>Shops</span>
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary filter">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                    <path d="M405.3,0h-288c-5.9,0-10.7,4.8-10.7,10.7v160H128V21.3h266.7v21.3H416v-32C416,4.8,411.2,0,405.3,0z"/>
+                    <rect x="64" y="234.7" width="21.3" height="192"/>
+                    <rect x="106.7" y="234.7" width="21.3" height="192"/>
+                    <rect x="149.3" y="234.7" width="21.3" height="192"/>
+                    <rect x="309.3" y="117.3" width="117.3" height="21.3"/>
+                    <rect x="309.3" y="170.7"  width="117.3" height="21.3"/>
+                    <rect x="309.3" y="224"  width="117.3" height="21.3"/>
+                    <rect x="309.3" y="277.3"  width="117.3" height="21.3"/>
+                    <rect x="309.3" y="330.7"  width="117.3" height="21.3"/>
+                    <rect x="309.3" y="384"  width="117.3" height="21.3"/>
+                    <rect x="160" y="53.3"  width="21.3" height="32"/>
+                    <rect x="160" y="117.3"  width="21.3" height="32"/>
+                    <rect x="202.7" y="117.3"  width="21.3" height="32"/>
+                    <rect x="202.7" y="53.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="53.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="117.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="181.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="245.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="309.3"  width="21.3" height="32"/>
+                    <rect x="245.3" y="373.3"  width="21.3" height="32"/>
+                    <path d="M490.7,490.7v-416c0-5.9-4.8-10.7-10.7-10.7H309.3c-5.9,0-10.7,4.8-10.7,10.7v416h-85.3v-288
+	c0-5.9-4.8-10.7-10.7-10.7H32c-5.9,0-10.7,4.8-10.7,10.7v288H0v0v10.7c0,5.9,4.8,10.7,10.7,10.7H32h170.7h106.6c0,0,0,0,0,0H480
+	c0,0,0,0,0,0h21.3c5.9,0,10.7-4.8,10.7-10.7v-10.7H490.7z M320,85.3h149.3v405.3H416V448c0-5.9-4.8-10.7-10.7-10.7H352
+	c-5.9,0-10.7,4.8-10.7,10.7v42.7H320V85.3z M394.7,490.7h-32v-32h32V490.7z M42.7,213.3H192v277.3h-21.3v-32
+	c0-5.9-4.8-10.7-10.7-10.7H74.7c-5.9,0-10.7,4.8-10.7,10.7v32H42.7V213.3z M149.3,490.7h-64v-21.3h64V490.7z"/>
+                </svg>
+                <span>Citys</span>
+            </button>
+        </li>
+    </ul>
+</nav>
 
+<div id="thread" class="col-10 col-md-9 col-xl-10">
+    <div class="row" style="padding-left: 10px">
+
+        <div style="padding: 10px" class="col-11 col-md-8 col-lg-5">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-success">Go somewhere</span>
+                    <div class="quick" up>
+                        <svg viewBox="0, 0, 16, 16" width="10px" height="10px">
+                            <path class="up" fill="currentColor"
+                                  d="M 8,2 l 6,6 l -3,0 l 0,5 l -6,0 l 0,-5 l -3,0 z"></path>
+                            <path class="down" fill="currentColor"
+                                  d="M 5,2 l 6,0 l 0,6 l 3,0 l -6,6 l -6,-6 l 3,0 z"></path>
+                        </svg>
+                        10%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 10px" class="col-11 col-md-8 col-lg-5">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-success">Go somewhere</span>
+                    <div class="quick" up>
+                        <svg viewBox="0, 0, 16, 16" width="10px" height="10px">
+                            <path class="up" fill="currentColor"
+                                  d="M 8,2 l 6,6 l -3,0 l 0,5 l -6,0 l 0,-5 l -3,0 z"></path>
+                            <path class="down" fill="currentColor"
+                                  d="M 5,2 l 6,0 l 0,6 l 3,0 l -6,6 l -6,-6 l 3,0 z"></path>
+                        </svg>
+                        10%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 10px" class="col-11 col-md-8 col-lg-5">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-success">Go somewhere</span>
+                    <div class="quick" up>
+                        <svg viewBox="0, 0, 16, 16" width="10px" height="10px">
+                            <path class="up" fill="currentColor"
+                                  d="M 8,2 l 6,6 l -3,0 l 0,5 l -6,0 l 0,-5 l -3,0 z"></path>
+                            <path class="down" fill="currentColor"
+                                  d="M 5,2 l 6,0 l 0,6 l 3,0 l -6,6 l -6,-6 l 3,0 z"></path>
+                        </svg>
+                        10%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 10px" class="col-11 col-md-8 col-lg-5">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-success">Go somewhere</span>
+                    <div class="quick" up>
+                        <svg viewBox="0, 0, 16, 16" width="10px" height="10px">
+                            <path class="up" fill="currentColor"
+                                  d="M 8,2 l 6,6 l -3,0 l 0,5 l -6,0 l 0,-5 l -3,0 z"></path>
+                            <path class="down" fill="currentColor"
+                                  d="M 5,2 l 6,0 l 0,6 l 3,0 l -6,6 l -6,-6 l 3,0 z"></path>
+                        </svg>
+                        10%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 10px" class="col-11 col-md-8 col-lg-5">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-success">Go somewhere</span>
+                    <div class="quick" up>
+                        <svg viewBox="0, 0, 16, 16" width="10px" height="10px">
+                            <path class="up" fill="currentColor"
+                                  d="M 8,2 l 6,6 l -3,0 l 0,5 l -6,0 l 0,-5 l -3,0 z"></path>
+                            <path class="down" fill="currentColor"
+                                  d="M 5,2 l 6,0 l 0,6 l 3,0 l -6,6 l -6,-6 l 3,0 z"></path>
+                        </svg>
+                        10%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
