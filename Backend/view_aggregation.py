@@ -38,7 +38,6 @@ views = [
     "ta_d_pp_h3_c",
     "ta_d_pp_h4_c",
     "ta_d_pp_h5_c"
-
 ]
 
 def init_aggregate_tables_pd():
@@ -48,7 +47,10 @@ def init_aggregate_tables_pd():
                                +"@"+credentials["domain"]
                                +":"+credentials["port"]
                                +"/"+credentials["dbname"])
-    return engine.connect()
+    connection = engine.connect();
+    for view in views:
+        aggregate_tables.update({view:pd.read_sql("SELECT * FROM "+view+";",connection)})
+    return connection
 
 def cleanup(connection):
     connection.close()
