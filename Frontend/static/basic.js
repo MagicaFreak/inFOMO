@@ -112,8 +112,3 @@ class Information {
         return wrapper;
     }
 }
-// GSAP code
-gsap.to(".money_2", {
-    duration: 1,
-    x: -200
-})

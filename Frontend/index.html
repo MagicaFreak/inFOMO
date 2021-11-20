@@ -5,14 +5,20 @@
     <title>inFomo</title>
 
     <link href="static/basic.css" rel="stylesheet">
+    <link href="static/animation.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/EaselPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
+
     <script src="static/basic.js"></script>
-    <!-- > Here comes GSAP: <-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="static/animations.js"></script>
 
 </head>
 <body>
@@ -21,8 +27,10 @@
     <ul class="nav flex-column">
         <li>
             <button class="btn btn-primary filter" onclick="loadNew()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
+                     viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                 </svg>
                 <span>
                     New
@@ -31,7 +39,8 @@
         </li>
         <li>
             <button class="btn btn-primary filter" onclick="loadSales()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-file-bar-graph" viewBox="0 0 16 16">
                     <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
                     <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
                 </svg>
@@ -58,27 +67,28 @@
         </li>
         <li>
             <button class="btn btn-primary filter" onclick="loadCitys()">
-                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor">
                     <path d="M405.3,0h-288c-5.9,0-10.7,4.8-10.7,10.7v160H128V21.3h266.7v21.3H416v-32C416,4.8,411.2,0,405.3,0z"/>
                     <rect x="64" y="234.7" width="21.3" height="192"/>
                     <rect x="106.7" y="234.7" width="21.3" height="192"/>
                     <rect x="149.3" y="234.7" width="21.3" height="192"/>
                     <rect x="309.3" y="117.3" width="117.3" height="21.3"/>
-                    <rect x="309.3" y="170.7"  width="117.3" height="21.3"/>
-                    <rect x="309.3" y="224"  width="117.3" height="21.3"/>
-                    <rect x="309.3" y="277.3"  width="117.3" height="21.3"/>
-                    <rect x="309.3" y="330.7"  width="117.3" height="21.3"/>
-                    <rect x="309.3" y="384"  width="117.3" height="21.3"/>
-                    <rect x="160" y="53.3"  width="21.3" height="32"/>
-                    <rect x="160" y="117.3"  width="21.3" height="32"/>
-                    <rect x="202.7" y="117.3"  width="21.3" height="32"/>
-                    <rect x="202.7" y="53.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="53.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="117.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="181.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="245.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="309.3"  width="21.3" height="32"/>
-                    <rect x="245.3" y="373.3"  width="21.3" height="32"/>
+                    <rect x="309.3" y="170.7" width="117.3" height="21.3"/>
+                    <rect x="309.3" y="224" width="117.3" height="21.3"/>
+                    <rect x="309.3" y="277.3" width="117.3" height="21.3"/>
+                    <rect x="309.3" y="330.7" width="117.3" height="21.3"/>
+                    <rect x="309.3" y="384" width="117.3" height="21.3"/>
+                    <rect x="160" y="53.3" width="21.3" height="32"/>
+                    <rect x="160" y="117.3" width="21.3" height="32"/>
+                    <rect x="202.7" y="117.3" width="21.3" height="32"/>
+                    <rect x="202.7" y="53.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="53.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="117.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="181.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="245.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="309.3" width="21.3" height="32"/>
+                    <rect x="245.3" y="373.3" width="21.3" height="32"/>
                     <path d="M490.7,490.7v-416c0-5.9-4.8-10.7-10.7-10.7H309.3c-5.9,0-10.7,4.8-10.7,10.7v416h-85.3v-288
 	c0-5.9-4.8-10.7-10.7-10.7H32c-5.9,0-10.7,4.8-10.7,10.7v288H0v0v10.7c0,5.9,4.8,10.7,10.7,10.7H32h170.7h106.6c0,0,0,0,0,0H480
 	c0,0,0,0,0,0h21.3c5.9,0,10.7-4.8,10.7-10.7v-10.7H490.7z M320,85.3h149.3v405.3H416V448c0-5.9-4.8-10.7-10.7-10.7H352
@@ -99,10 +109,52 @@
 
 <!-- > Here come SVGs: <-->
 <section>
-    <div class= "container">
-        <div class="money money_1"><img src="assets/money-cash-svgrepo-com.svg"></div>
-        <div class="money money_2"><img src="assets/money-cash-svgrepo-com.svg"></div>
-        <div class="money money_3"><img src="assets/money-cash-svgrepo-com.svg"></div>
+    <div class="animation" style="width: 500px; height: 300px; overflow: hidden; background: skyblue">
+        <img src="static/assets/city.svg" alt="" style="bottom: 0; left: 10px; height: 200px; width: auto;">
+        <img src="static/assets/city.svg" alt="" style="bottom: 0; left: 280px; height: 200px; width: auto;">
+        <img src="static/assets/hydrant.svg" alt="" style="bottom: 0; left: 290px;height: 50px; width: auto;">
+        <img src="static/assets/tree.svg" alt="" style="bottom: 0; left: 150px;height: 80px; width: auto;">
+        <img src="static/assets/tree.svg" alt="" style="bottom: 0; left: 183px;height: 80px; width: auto;">
+        <img src="static/assets/fire.svg" alt="" style="bottom: 155px; left: 148px;height: 80px; width: auto;">
+        <img src="static/assets/fire.svg" alt="" style="bottom: 102px; left: 256px;height: 80px; width: auto;">
+
+        <svg class="smoke smoke-3 size-1" viewBox="0,0,16,16" style="bottom: 161px; left: 266px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-2 size-3" viewBox="0,0,16,16" style="bottom: 168px; left: 272px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-1 size-2" viewBox="0,0,16,16" style="bottom: 165px; left: 279px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-1 size-3" viewBox="0,0,16,16" style="bottom: 172px; left: 284px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+
+        <svg class="smoke smoke-1 size-1" viewBox="0,0,16,16" style="bottom: 210px; left: 181px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-2 size-3" viewBox="0,0,16,16" style="bottom: 220px; left: 186px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-3 size-2" viewBox="0,0,16,16" style="bottom: 222px; left: 190px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+        <svg class="smoke smoke-2 size-1" viewBox="0,0,16,16" style="bottom: 216px; left: 188px;">
+            <circle r="6" cx="8" cy="8" fill="currentColor"></circle>
+        </svg>
+
+        <script>
+            gsap.to(".smoke", {
+                opacity: 1,
+            })
+            gsap.to(".smoke", {
+                duration: 3,
+                y: -55,
+                opacity: 0,
+                repeat: -1
+            });
+        </script>
     </div>
 </section>
 

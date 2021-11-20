@@ -5,27 +5,27 @@ app = FastAPI()
 
 
 @app.get("/")
-async def root():
+async def index():
     return {"message": "Hello World"}
 
 
 @app.get("/sales")
-async def root():
+async def sales():
     return {"message": "Hello World"}
 
 
 @app.get("/products")
-async def root():
+async def products():
     return {"message": "Hello World"}
 
 
 @app.get("/shops")
-async def root():
+async def shops():
     return {"message": "Hello World"}
 
 
 @app.get("/citys")
-async def root():
+async def citys():
     return {"message": "Hello World"}
 
 
