@@ -90,6 +90,41 @@ def eval_general_sales_prev_week(dt, connection):
     else:
         return build_return_dictionary(dt, real_percent, "ta_d")
 
+def eval_general_sales_prev_week_per_city(dt, connection):
+    sql = "SELECT date, transaction, city_id FROM ta_d_city WHERE date BETWEEN '" + (
+                dt - timedelta(6 + 7)).isoformat() + "' AND '" + dt.isoformat() + "';"
+    pdcon = pd.read_sql(
+        sql,
+        con=connection, parse_dates=["date"],
+        columns=["date", "transaction", "city_id"]
+    )
+    pd_cw = pdcon.to_dict()
+
+    #TODO: create bucket for each city code in the result, compare bucket-wise
+    average_list = [0, 0]
+    count = [0, 0]
+
+    for i in range(len(pd_cw["date"])):
+        if (date.fromisoformat(str(pd_cw["date"][i])[:10]) >= (dt - timedelta(6))):  # if date lies after one week ago
+            average_list[0] += int(pd_cw["transaction"][i])
+            count[0] += 1
+        else:
+            average_list[1] += int(pd_cw["transaction"][i])
+            count[1] += 1
+    if(count[0]==0 or count[1]==0):
+        return None
+    average_list[0] /= count[0]
+    average_list[1] /= count[1]
+
+    if (average_list[0] == 0 or average_list[1] == 0):
+        return None
+    real_percent = (1 - (average_list[0] / average_list[1]))* 100
+
+    if (abs(real_percent) < 3):  # insignificant rise/fall
+        return None
+    else:
+        return build_return_dictionary(dt, real_percent, "ta_d")
+
 if __name__ == "__main__":
     import view_aggregation as va
 
