@@ -11,7 +11,7 @@ def db_cred_init():
     L = []
     for line in file:
         L.append(line[:-1])
-    print(L)
+
     file.close()
     if(len(L)!=5):
         return False
@@ -42,14 +42,12 @@ views = [
 
 def init_aggregate_tables_pd():
     db_cred_init()
-    engine = sql.create_engine("mariadb://"+credentials["dbuser"]
+    engine = sql.create_engine("mysql+mysqlconnector://"+credentials["dbuser"]
                                +":"+credentials["dbpass"]
                                +"@"+credentials["domain"]
                                +":"+credentials["port"]
                                +"/"+credentials["dbname"])
     connection = engine.connect()
-    for view in views:
-        aggregate_tables.update({view:pd.read_sql("SELECT * FROM "+view+";",connection)})
     return connection
 
 def cleanup(connection):
