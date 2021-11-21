@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(){
-    loadNew()
+    document.getElementById('thread-cards').appendChild(new Information("Istanbul lost 60% income",
+        "We compared the average Day from last month with today and Istanbul made 60% less profit then average",
+        "Cities", -60, "20.11.2021", null).render())
+    document.getElementById('thread-cards').appendChild(new Information("Ankara lost 10% income",
+        "We compared the average Day from last month with today and Ankara made 10% less profit then average",
+        "Cities", -10, "20.11.2021", null).render())
+    document.getElementById('thread-cards').appendChild(new Information("Adana won 10% income",
+        "We compared the average Day from last month with today and Adana made 10% more profit then average",
+        "Cities", 10, "19.11.2021", null).render())
+    document.getElementById('thread-cards').appendChild(new Information("Shop 32 lost 30% income",
+        "We compared the average Day from last month with today and the Shop 32 in Istanbul made 30% less profit then average",
+        "Shops", -30, "18.11.2021", null).render())
+    document.getElementById('thread-cards').appendChild(new Information("Istanbul won 10% income",
+        "We compared the average Day from last month with today and Istanbul made 60% less profit then average",
+        "Cities", 10, "18.11.2021", null).render())
+    document.getElementById('thread-cards').appendChild(new Information("Munich won 60% income",
+        "We compared the average Day from last month with today and Istanbul made 60% less profit then average",
+        "Cities", 60, "17.11.2021", null).render())
+    // loadNew()
 });
 
 function loadNew() {
@@ -45,16 +63,19 @@ class Information {
     render () {
         let wrapper = document.createElement("div")
         wrapper.style.padding = "10px"
-        wrapper.classList.add("col-11", "col-md-8", "col-lg-5")
+        wrapper.classList.add("wrapper")
 
         let card = document.createElement("div")
         card.classList.add("card")
 
         let cardHeader = document.createElement("div")
-        cardHeader.classList.add("card-header")
+        cardHeader.classList.add("card-header","animation")
+        if (this.percent < 0) {
+            downCity(cardHeader)
+        }
         card.appendChild(cardHeader)
 
-        // TODO Animation integration
+
 
         let cardBody = document.createElement("div")
         cardBody.classList.add("card-body")
